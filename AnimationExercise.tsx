@@ -17,7 +17,7 @@ const AnimationExercise = () => {
   let xAxis= 0;
   let yAxis= 0;
   const [isVisible, setIsVisible] = React.useState(false);
-  const [frogSize, setFrogSize] = React.useState(10);
+  const [frogSize, setFrogSize] = React.useState(1);
   const animatedOpacity = React.useRef(new Animated.Value(0)).current;
   const animatedSize = React.useRef(new Animated.Value(0)).current;
   const spinValue = React.useRef(new Animated.Value(0)).current;
@@ -119,13 +119,13 @@ const AnimationExercise = () => {
                 {
                   scaleX: animatedSize.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [1, frogSize]
+                    outputRange: [0, frogSize]
                   })
                 },
                 {
                   scaleY: animatedSize.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [1, frogSize]
+                    outputRange: [0, frogSize]
                   })
                 },
                 {
@@ -174,8 +174,8 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   image: {
-    width: 20,
-    height: 20,
+    width: 200,
+    height: 200,
     marginTop: 100,
     marginBottom: 200
   },
